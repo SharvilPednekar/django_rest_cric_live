@@ -1,0 +1,106 @@
+</!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Consume REST Framework into AJAX Query.</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> 
+  </script>
+  <script>
+    $(document).ready(function()
+    {
+      $.ajax({
+        url:'http://127.0.0.1:8000/api/venue-list/',
+        datatype:'JSON',
+        success:function(data){
+          for (var i = 0; i < data.length; i++) 
+          {
+            var row = $('<tr><td>'+data[i].id+'</td><td>'+data[i].name+'</td><td>'+data[i].location+'</td><td>'+data[i].capacity+'</td></tr>');
+              $("#Venuelist").append(row);
+            
+          }
+        }
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <center>
+    <h1>Venue List</h1>
+    <hr/>
+
+<table class="table" id = 'Venuelist'>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Location</th>
+      <th scope="col">Capacity</th>
+    </tr>
+  </thead>
+</table>
+
+  </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

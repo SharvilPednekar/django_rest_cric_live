@@ -1,0 +1,108 @@
+</!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Consume REST Framework into AJAX Query.</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> 
+  </script>
+  <script>
+    $(document).ready(function()
+    {
+      $.ajax({
+        url:'http://127.0.0.1:8000/api/match-list/',
+        datatype:'JSON',
+        success:function(data){
+          for (var i = 0; i < data.length; i++) 
+          {
+            var row = $('<tr><td>'+data[i].id+'</td><td>'+data[i].game+'</td><td>'+data[i].time+'</td><td>'+data[i].date+'</td><td>'+data[i].result+'</td><td>'+data[i].venue+'</td></tr>');
+              $("#Matchlist").append(row);
+            
+          }
+        }
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <center>
+    <h1>Match List</h1>
+    <hr/>
+
+<table class="table" id = 'Matchlist'>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Game</th>
+      <th scope="col">Time</th>
+      <th scope="col">Date</th>
+      <th scope="col">Result</th>
+      <th scope="col">Venue</th>
+    </tr>
+  </thead>
+</table>
+
+  </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

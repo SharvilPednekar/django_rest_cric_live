@@ -1,0 +1,110 @@
+</!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Consume REST Framework into AJAX Query.</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> 
+  </script>
+  <script>
+    $(document).ready(function()
+    {
+      $.ajax({
+        url:'http://127.0.0.1:8000/api/match_sum-list/',
+        datatype:'JSON',
+        success:function(data){
+          for (var i = 0; i < data.length; i++) 
+          {
+            var row = $('<tr><td>'+data[i].id+'</td><td>'+data[i].team_detail+'</td><td>'+data[i].winner+'</td><td>'+data[i].loser+'</td><td>'+data[i].mom+'</td><td>'+data[i].bom+'</td><td>'+data[i].best_fielder+'</td><td>'+data[i].game+'</td></tr>');
+              $("#MatchSumlist").append(row);
+            
+          }
+        }
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <center>
+    <h1>Match Summary List</h1>
+    <hr/>
+
+<table class="table" id = 'MatchSumlist'>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Team Details</th>
+      <th scope="col">Winner</th>
+      <th scope="col">Loser</th>
+      <th scope="col">Mom</th>
+      <th scope="col">Bom</th>
+      <th scope="col">Best fielder</th>
+      <th scope="col">Match</th>
+    </tr>
+  </thead>
+</table>
+
+  </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

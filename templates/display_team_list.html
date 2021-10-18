@@ -1,0 +1,51 @@
+</!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Consume REST Framework into AJAX Query.</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"> 
+  </script>
+  <script>
+    $(document).ready(function()
+    {
+      $.ajax({
+        url:'http://127.0.0.1:8000/api/team-list/',
+        datatype:'JSON',
+        success:function(data){
+          for (var i = 0; i < data.length; i++) 
+          {
+            var row = $('<tr><td>'+data[i].id+'</td><td>'+data[i].name+'</td><td>'+data[i].test_captain+'</td><td>'+data[i].one_Day_captain+'</td><td>'+data[i].first_Test+'</td><td>'+data[i].first_Odi+'</td><td>'+data[i].first_T20+'</td><td>'+data[i].association+'</td><td>'+data[i].coaches+'</td></tr>');
+              $("#Teamlist").append(row);
+            
+          }
+        }
+      });
+    });
+  </script>
+  
+</head>
+
+<body>
+  <center>
+    <h1>Team List</h1>
+    <hr/>
+
+<table class="table" id = 'Teamlist'>
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Team</th>
+      <th scope="col">Test Captain</th>
+      <th scope="col">One Day Captain</th>
+      <th scope="col">Test Debut</th>
+      <th scope="col">ODI Debut</th>
+      <th scope="col">T20 Debut</th>
+      <th scope="col">Association</th>
+      <th scope="col">Coaches</th>
+    </tr>
+  </thead>
+</table>
+
+  </center>
+</body>
+</html>
