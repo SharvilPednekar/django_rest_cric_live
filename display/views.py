@@ -1,10 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from api.models import Team, Player
-from api.serializers import TeamSerializer, PlayerSerializer
+from api.models import Team, Player, Tournament, PointsTable, Venue, Match, Match_Summary
+from api.serializers import TeamSerializer, PlayerSerializer, TournamentSerializer, PointsTableSerializer, VenueSerializer, MatchSerializer, Match_Summary_Serializer
 
 
 # Create your views here.
+def index(request):
+	'''Home Page for criclive.'''
+	return render(request, 'index.html')
+
 def displayTeamList(request):
 	print('.........................')
 	return render(request,"display_team_list.html")
