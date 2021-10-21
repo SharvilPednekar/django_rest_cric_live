@@ -1,1 +1,1 @@
-web: gunicorn cric_live.wsgi --log-file -
+web: gunicorn cric_live.wsgi
